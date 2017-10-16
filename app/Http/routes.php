@@ -1,5 +1,7 @@
 <?php
 
+use App\User;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -14,3 +16,18 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Route::get('/contact', 'PostController@contact');
+
+//Route::get('/user/{id}/role', function($id){
+//	$user = User::find($id);
+//	foreach($user->roles as $role){
+//		return $role->name;
+//	}
+//});
+
+Route::resource('/users', 'PostController');
+
+Route::resource('/home', 'HomeController');
+
+
